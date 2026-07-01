@@ -1,6 +1,4 @@
 # Nestjs specific
-/dist
-/node_modules
 /build
 /tmp
 
@@ -22,3 +20,15 @@ lerna-debug.log*
 # temp directory
 .temp
 .tmp
+
+# Dependency and build directories
+node_modules/
+dist/
+
+# SQLite databases
+*.sqlite
+
+# OS files
+.DS_Store
+
+
