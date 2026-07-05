@@ -209,6 +209,22 @@ function App() {
 
   return (
     <div className="app-layout">
+      {/* Global loader shown while seeding or during initial load */}
+      {(seeding || (loading && employees.length === 0)) && (
+        <div className="modal-overlay" style={{ zIndex: 200 }}>
+          <div className="modal-content" style={{ maxWidth: 420, textAlign: 'center' }}>
+            <h3 style={{ marginBottom: 8 }}>{seeding ? 'Seeding database' : 'Loading data'}</h3>
+            <p style={{ color: 'var(--text-muted)', marginBottom: 16 }}>
+              {seeding
+                ? 'This may take a minute while sample data is being generated.'
+                : 'Fetching initial application data...'}
+            </p>
+            <div style={{ height: 36 }}>
+              <div className="loader" />
+            </div>
+          </div>
+        </div>
+      )}
       {/* Sidebar Navigation Panel */}
       <aside className="sidebar">
         <div className="brand">

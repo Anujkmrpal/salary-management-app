@@ -23,8 +23,9 @@ async function bootstrap() {
 
   // CORS for local frontend dev
   app.enableCors({
-    origin: ['http://localhost:5173', 'http://localhost:3001'],
+    origin: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true,
   });
 
   // Swagger API docs at /api

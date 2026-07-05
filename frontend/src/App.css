@@ -681,6 +681,32 @@
   to { transform: scale(1); opacity: 1; }
 }
 
+/* Simple loader */
+.loader {
+  width: 64px;
+  height: 8px;
+  margin: 0 auto;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(99,102,241,0.15), rgba(99,102,241,0.6));
+  position: relative;
+  overflow: hidden;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: -40%;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.4));
+  animation: loaderMove 1s linear infinite;
+}
+
+@keyframes loaderMove {
+  from { left: -40%; }
+  to { left: 100%; }
+}
+
 /* Responsive Grid Adaptation */
 @media (max-width: 1024px) {
   .sidebar {
